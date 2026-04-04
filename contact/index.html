@@ -17,15 +17,26 @@
 
     <h1>Contact</h1>
 
-    <form id="contact-form">
+    <form
+    action="mailto:diegomenchaca@ucsd.edu"
+    method="POST"
+    enctype="text/plain"
+  >
     <label>
       Email:
-      <input type="email" name="email" value="">
+      <input
+        type="email"
+        name="email"
+        value=""
+      >
     </label>
 
     <label>
       Subject:
-      <input name="subject" value="">
+      <input
+        name="subject"
+        value=""
+      >
     </label>
 
     <label>
@@ -33,20 +44,8 @@
       <textarea name="body"></textarea>
     </label>
 
-    <button type="submit">Send</button>
+    <button>Send</button>
   </form>
-
-    <script>
-    document.getElementById('contact-form').addEventListener('submit', function (event) {
-      event.preventDefault(); // stop normal mailto submit
-
-      const email = 'dmenchaca805@gmail.com';
-      const subject = encodeURIComponent(this.subject.value);
-      const body = encodeURIComponent(this.body.value);
-
-      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-    });
-  </script>
 
 </body>
 </html>
