@@ -1,3 +1,5 @@
+/* === Global styles === */
+
 :root {
   --color-accent: oklch(65% 50% 300);
 }
@@ -81,4 +83,98 @@ body {
   margin-inline: auto;
   padding-inline: 1rem;
   accent-color: var(--color-accent);
+}
+
+/* === CV styles === */
+/* Skill tags */
+.skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills li {
+  background: oklch(from var(--color-accent) 95% 10% h);
+  color: oklch(from var(--color-accent) 30% 30% h);
+  padding: 0.3em 0.8em;
+  border-radius: 1em;
+  font-size: 0.9em;
+  transition: transform 0.15s, background 0.15s;
+}
+
+.skills li:hover {
+  transform: scale(1.07);
+  background: oklch(from var(--color-accent) 85% 20% h);
+}
+
+/* Two column layout */
+.cv section {
+  display: grid;
+  grid-template-columns: 8em 1fr;
+  gap: 0 2em;
+  margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid oklch(80% 3% 200);
+}
+
+.cv section > header {
+  grid-column: 1;
+}
+
+.cv section > :not(header) {
+  grid-column: 2;
+}
+
+.cv section > header h2 {
+  text-transform: uppercase;
+  font-size: 100%;
+  letter-spacing: 0.08em;
+  color: oklch(50% 10% 300);
+  margin: 0;
+}
+
+/* page header */
+body:has(.cv) h1 {
+  font-size: 250%;
+  margin-bottom: 0.2em;
+}
+
+body:has(.cv) > header p {
+  font-size: 1.15em;
+  color: oklch(50% 5% 300);
+  border-left: 3px solid var(--color-accent);
+  padding-left: 0.8em;
+}
+
+/* Timeline dot */
+.cv article header h3 {
+  position: relative;
+  padding-left: 1.2em;
+  margin: 0;
+}
+
+.cv article header h3::before {
+  content: "";
+  position: absolute;
+  top: 0.3em;
+  left: 0;
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+/* responsive */
+@media (max-width: 500px) {
+  .cv section {
+    grid-template-columns: 1fr;
+  }
+
+  .cv section > header,
+  .cv section > :not(header) {
+    grid-column: 1;
+  }
 }
