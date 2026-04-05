@@ -39,15 +39,6 @@ input, textarea, button {
   font: inherit;
 }
 
-label > span {
-  align-self: center;
-}
-
-input, textarea {
-  width: 100%;
-  box-sizing: border-box;
-}
-
 form {
   display: grid;
   grid-template-columns: auto 1fr;
