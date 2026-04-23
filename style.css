@@ -190,3 +190,28 @@ body:has(.cv) > header p {
   right: 1rem;
   font-size: 80%;
 }
+
+/* === GitHub profile stats === */
+
+#profile-stats dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5em 1em;
+  text-align: center;
+}
+
+#profile-stats dt {
+  grid-row: 1;
+  font-size: 0.85em;
+  color: oklch(50% 5% 300);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+#profile-stats dd {
+  grid-row: 2;
+  margin: 0;
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--color-accent);
+}
