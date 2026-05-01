@@ -54,10 +54,64 @@ input, textarea, button, select {
   margin: 0;
 }
 
-#projects-pie-plot {
-  max-width: 20em;
+.container {
+  display: flex;
+  align-items: center;
+  gap: 2em;
   margin-block: 2em;
+}
+
+#projects-pie-plot {
+  width: min(20em, 100%);
   overflow: visible;
+}
+
+.legend {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 0.75em 1.5em;
+  list-style: none;
+  padding: 0.5em;
+  margin: 0;
+  border: 1px solid oklch(50% 10% 200 / 40%);
+  border-radius: 0.5em;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.swatch {
+  display: inline-block;
+  width: 1em;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.searchBar {
+  margin-bottom: 1.5em;
+}
+
+path {
+  transition: 300ms;
+  cursor: pointer;
+}
+
+svg:has(path:hover) path:not(:hover) {
+  opacity: 0.5;
+}
+
+.selected {
+  --color: oklch(60% 45% 0) !important;
+
+  &:is(path) {
+    fill: var(--color);
+  }
 }
 
 .project-year {
