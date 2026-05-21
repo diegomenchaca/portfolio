@@ -341,6 +341,10 @@ circle {
   transition: 200ms;
   transform-origin: center;
   transform-box: fill-box;
+
+  @starting-style {
+    r: 0;
+  }
 }
 
 circle:hover {
@@ -372,4 +376,83 @@ circle.selected {
 
 .gridlines .domain {
   display: none;
+}
+
+#commit-slider {
+  display: flex;
+  align-items: baseline;
+  margin-block: 1em;
+}
+
+#commit-slider label {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  flex: 1;
+}
+
+#commit-max-time {
+  margin-left: auto;
+  font-weight: bold;
+  color: var(--color-accent);
+}
+
+#scrolly-1 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+
+  > * {
+    flex: 1;
+  }
+}
+
+#scatter-story {
+  position: relative;
+}
+
+.step {
+  padding-bottom: 4rem;
+}
+
+#scatter-plot {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  height: 50vh;
+}
+
+#files {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  margin-block: 1em;
+
+  > div {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+
+  dt {
+    grid-column: 1;
+  }
+
+  dd {
+    grid-column: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    align-content: start;
+    gap: 0.15em;
+    padding-top: 0.6em;
+    margin-left: 0;
+  }
+}
+
+.loc {
+  width: 0.5em;
+  aspect-ratio: 1;
+  background: var(--color);
+  border-radius: 50%;
 }
